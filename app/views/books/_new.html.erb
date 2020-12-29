@@ -1,0 +1,17 @@
+<h1>New book</h1>
+<% if book.errors.any? %>
+  <h3><%= book.errors.count %> errors prohibited this obj from being saved:</h3>
+  <% book.errors.full_messages.each do |message| %>
+    <ul>
+      <li><%= message %></li>
+    </ul>
+  <% end %>
+<% end %>
+<!--以下インスタンス変数(@book)をローカル変数に変更-->
+<%= form_with model: book, local:true do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
+<% end %>

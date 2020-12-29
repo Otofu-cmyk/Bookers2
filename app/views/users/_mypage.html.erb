@@ -1,0 +1,19 @@
+<h2>User info</h2>
+<!--インスタンス変数(@user)をローカル変数に変更-->
+<%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+<table class="table table-striped">
+  <tr>
+    <td>name</td>
+    <!--インスタンス変数(@user)をローカル変数に変更-->
+    <td><%= user.name %></td>
+  </tr>
+  <tr>
+    <td>introduction</td>
+    <!--インスタンス変数(@user)をローカル変数に変更-->
+    <td><%= user.introduction %></td>
+  </tr>
+</table>
+<!--インスタンス変数(@user)をローカル変数に変更-->
+  <%= link_to edit_user_path(user), class: "btn btn-secondary" do %>
+    <div class="social" style="display: inline-block;"><i class="fas fa-user-cog"></i></div>
+  <% end %>
